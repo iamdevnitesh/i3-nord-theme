@@ -67,10 +67,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -247,13 +247,20 @@ exec_always picom --experimental-backends
 exec_always dunst
 
 # ROFI
+# old with bar
 bindsym ctrl+space exec rofi -no-config -no-lazy-grab -show drun -mod drun -theme /home/niteshk/.config/rofi/launcher.rasi  
+
+# DMENU
+# dmenu scripts
+bindsym $mod+colon exec --no-startup-id "~/.config/dmenu/dmplay.sh"
+bindsym $mod+b exec --no-startup-id "~/.config/dmenu/dmbookmarks.sh"
+bindsym $mod+d exec --no-startup-id "~/.config/dmenu/dmenu.sh"
+bindsym $mod+Shift+b exec --no-startup-id "~/.config/dmenu/dmconf.sh"
+bindsym $mod+y exec --no-startup-id "~/.config/dmenu/dmsearch.sh"
  
 
 # FEH
-# ucomment the below comment by removing # in order to get random wallpaper at every reload of i3
-exec_always --no-startup-id /usr/bin/feh --randomize --bg-fill $HOME/.config/i3/wallpapers/nord/*
-# exec_always feh --bg-scale $HOME/Pictures/Wallpapers/xyz.jpg
+exec_always --no-startup-id /usr/bin/feh --randomize --bg-fill $HOME/.config/i3/wallpapers/nord/ign_unsplash18.png
 
 # Round corners & gaps
 for_window [class="^.*"] border pixel 0
@@ -281,9 +288,12 @@ gaps bottom 5
 
 # POLYBAR LAUNCH SCRIPT
 exec_always --no-startup-id bash $HOME/.config/polybar/launch.sh
+bindsym $mod+Shift+p exec --no-startup-id polybar-msg cmd toggle 
+bindsym $mod+p exec --no-startup-id bash $HOME/.config/polybar/scripts/hidebottombar.sh
 
 # eww widget
-bindsym $mod+Shift+d exec $HOME/.config/eww/test.sh
+# exec --no-startup-id eww daemon
+# bindcode 64 exec $HOME/.config/eww/launch_eww
 
 # AUTORENAME
 # exec killall workstyle
@@ -301,7 +311,7 @@ bindsym Print exec --no-startup-id /usr/bin/flameshot gui
 exec_always --no-startup-id numlockx on
 
 # CURSOR FIX
-exec_always xsetroot -cursor_name left_ptr &
+exec_always --no-startup-id xsetroot -cursor_name left_ptr &
 
 # bindsym $mod+u exec setxkbmap us;
 # bindsym $mod+c exec setxkbmap us -variant colemak_dh
