@@ -1,7 +1,7 @@
 Fonts:
     SF Pro Display
     Liga SFMono Nerd Font
-    Apple Emoji
+    Apple Emoji - yay -S ttf-apple-emoji
     Font Awesome 6 Pro
     feather.ttf
     Iosevka Nerd Font
@@ -10,13 +10,7 @@ Fonts:
 Polybar:
     polybar
     playerctl
-    python-dbus
-
-Polybar Hide Script dependencies:
-    bash
-    xdotool
-    xwininfo
-    xev
+    dbus-python
 
 cava
 
