@@ -1,0 +1,8 @@
+select_bg #2e3440
+select_fg #d8dee9
+nselect_bg #4c566a
+nselect_fg #88c0d0
+font Iosevka Nerd Font
+font_size 14
+x 960
+y 540
