@@ -1,6 +1,6 @@
 #!/bin/sh
 
-USER="iamcodernitesh"
+USER="iamdevnitesh"
 #TOKEN=$GH_TOKEN
 TOKEN=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
 
